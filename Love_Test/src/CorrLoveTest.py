@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-def love_test(intéressé, candidates):
+def love_test(jul, candidates):
     """
     @pre <à compléter>
     @post <à compléter>
@@ -10,22 +10,22 @@ def love_test(intéressé, candidates):
     best_femme = []
     best_pourcentage = 0
     for femme in candidates:
-        nbr_caract = len(candidat)-1
+        nbr_caract = len(jul)-1
         caract_communes = 0
         #Age
-        if femme[1] == candidat[1]:
+        if femme[1] == jul[1]:
             caract_communes += 1
         #Couleur
-        if femme[2] == candidat[2]:
+        if femme[2] == jul[2]:
             caract_communes += 1
         #Chien/Chat
-        if femme[3] == candidat[3]:
+        if femme[3] == jul[3]:
             caract_communes += 1
         #Série
-        if femme[4] == candidat[4]:
+        if femme[4] == jul[4]:
             caract_communes += 1
         #PS/Fifa
-        if femme[5] == candidat[5]:
+        if femme[5] == jul[5]:
             caract_communes += 1
         pourcentage = (caract_communes/nbr_caract)*100
         print(femme[0] + str(pourcentage))
