@@ -26,7 +26,7 @@ class TestLoveTest(unittest.TestCase):
                 student_ans = student.love_test(n[0],n[1])
             except Exception as e:
                 self.fail("Votre fonction a provoqué l'exception {}: {} avec comme argument {}".format(type(e), e, n))
-            correct_ans = correct.love_test(n)
+            correct_ans = correct.love_test(n[0],n[1])
             self.assertEqual(student_ans, correct_ans,
                              rep.format(student_ans, n, correct_ans))
 
