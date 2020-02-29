@@ -78,8 +78,18 @@ la fonction retourne
 
 class TestLoveTest(unittest.TestCase):
 
-    def test1_LoveTest(self):
-        args = [[i1,l1], [i2,l1]]
+    def test0_None(self): # vérifie que la fonction renvoi quelque chose
+        args = [(j1,c1), (j2,c1)]
+        rep = _("Votre fonction a retourné None pour {} comme argument. Cela implique probablement qu'il manque un return dans votre code.")
+        for n in args:
+            try:
+                student_ans = student.love_test(n[0],n[1])
+            except Exception as e:
+                self.fail("Votre fonction a provoqué l'exception {}: {} avec comme argument {}".format(type(e), e, n))
+            self.assertIsNotNone(student_ans, rep.format(n))
+
+    def test1_LoveTest_empty(self): # vérifie ce que la fonction renvoi si la liste des candidates est vide => elle devrait renvoyer une liste vide
+        args = [(j1,c0)]
         rep = _("Votre fonction a retourné {} lorsqu'elle est appelée avec {} comme argument positif alors que la réponse attendue est {}")
         for n in args:
             try:
