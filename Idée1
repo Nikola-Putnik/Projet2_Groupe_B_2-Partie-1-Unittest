@@ -1,0 +1,34 @@
+# Projet2-B2
+Exercices Inginious du Groupe B
+# contexte jeux video : Grâce à vos talents d'informatique, vous avez été engagé pour programmer une partie de gta 6. 
+# Votre mission est la suivante : vous devez attribué le nombre d'étoile que mérite le joueur pour ses péchés...
+# Vous devex créer une fonction gta(morts,flics). cette fonction retournera le nombre d'étoiles en fonction du nombre de morts et en fonction du nombre de policiers présents parmis ceux-ci..
+#Cependant vous devez respecter les consignes exigées par vote supérieur :
+#1)le nombre d'étoiles est limitée à 6.
+#2 Vous obtenez une étoile supplémentaire à chaque fois que vous tuez 4 personnes
+#3) le simple fait d'avoir un policier parmis vos victimes majore votre nombre d'étoiles de 3
+#4) par la suite la mort d'un policier vaut 2 fois plus que celle d'une personne lambda
+
+#Code qui fonctionne 
+def gta(morts,flics):
+    etoiles =0
+    flicnbre=0
+    totalindi=0
+    if flics>=1:
+        etoiles +=3
+        flicnbre= (flics-1)
+        morts= morts-1
+        totalindi= morts+flicnbre
+        etoiles +=(totalindi//4)
+        if etoiles <=6:
+            return etoiles
+        else:
+            return 6
+    else:
+        totalindi= morts
+        etoiles= (totalindi//4)
+        if etoiles<=6:
+            return etoiles
+        else:
+            return 6
+    
