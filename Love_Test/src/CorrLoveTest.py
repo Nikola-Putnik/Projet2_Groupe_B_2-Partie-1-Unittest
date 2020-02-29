@@ -28,7 +28,6 @@ def love_test(jul, candidates):
         if femme[5] == jul[5]:
             caract_communes += 1
         pourcentage = (caract_communes/nbr_caract)*100
-        print(femme[0] + str(pourcentage))
         if len(best_femme) == 0:
             best_femme.append(femme[0])
             best_pourcentage = pourcentage
